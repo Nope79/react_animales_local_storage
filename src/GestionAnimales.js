@@ -56,7 +56,9 @@ function GestionAnimales() {
 
   return (
     <div>
-      <h2>Animales</h2>
+      <h2>¡¡¡Añade un nuevo animal a la enciclopedia!!!</h2>
+      <p></p>
+      <p></p>
       <FormularioAnimal
         animal={nuevoAnimal}
         setAnimal={setNuevoAnimal}
@@ -64,6 +66,9 @@ function GestionAnimales() {
         manejarAgregarAnimal={manejarAgregarAnimal}
         manejarGuardarEdicion={manejarGuardarEdicion}
       />
+      <p></p>
+      <p></p>
+      <p></p>
       <ListaAnimales
         animales={animales}
         manejarEditarAnimal={manejarEditarAnimal}

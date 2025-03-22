@@ -4,7 +4,7 @@ import GestionAnimales from './GestionAnimales';
 function App() {
   return (
     <div className="App">
-      <h1>Bienvenido Juan</h1>
+      <h1>Zoopedia</h1>
       <GestionAnimales />
     </div>
   );

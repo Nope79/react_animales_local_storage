@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, FormGroup, Input, Row, Col} from 'reactstrap';
 
 function FormularioAnimal({
   animal,
@@ -17,40 +18,65 @@ function FormularioAnimal({
 
   return (
     <div>
-      <input
-        type="text"
-        name="nombre"
-        value={animal.nombre}
-        onChange={manejarCambio}
-        placeholder="Nombre"
-      />
-      <input
-        type="number"
-        name="edad"
-        value={animal.edad}
-        onChange={manejarCambio}
-        placeholder="Edad"
-      />
-      <input
-        type="text"
-        name="raza"
-        value={animal.raza}
-        onChange={manejarCambio}
-        placeholder="Raza"
-      />
-      <input
-        type="text"
-        name="foto"
-        value={animal.foto}
-        onChange={manejarCambio}
-        placeholder="link Foto"
-      />
+      <Row>
+        <Col md={8}>
+          <Row>
+            <Col md={3}>
+              <FormGroup>
+                <Input
+                  type="text"
+                  name="nombre"
+                  value={animal.nombre}
+                  onChange={manejarCambio}
+                  placeholder="Nombre"
+                />
+              </FormGroup>
+            </Col>
+            <Col md={3}>
+              <FormGroup>
+                <Input
+                  type="text"
+                  name="raza"
+                  value={animal.raza}
+                  onChange={manejarCambio}
+                  placeholder="Raza"
+                />
+              </FormGroup>
+              </Col>
+              <Col md={2}>
+                <FormGroup>
+                  <Input
+                    type="text"
+                    name="edad"
+                    value={animal.edad}
+                    onChange={manejarCambio}
+                    placeholder="Edad"
+                  />
+                </FormGroup>
+            </Col>
+          </Row>
 
-      {editandoIndex !== null ? (
-        <button onClick={() => manejarGuardarEdicion(animal)}>Guardar Edición</button>
-      ) : (
-        <button onClick={() => manejarAgregarAnimal(animal)}>Agregar Animal</button>
-      )}
+          <Row>
+            <Col md={6}>
+              <Input
+                type="text"
+                name="foto"
+                value={animal.foto}
+                onChange={manejarCambio}
+                placeholder="Link para la imagen"
+              />
+            </Col>
+          </Row>
+        </Col>
+        <Col md={1}>
+          {editandoIndex !== null ? (
+            <Button color="success" onClick={() => manejarGuardarEdicion(animal)}>Guardar Edición</Button>
+          ) : (
+            <Button color="success" onClick={() => manejarAgregarAnimal(animal)}>Agregar Animal</Button>
+          )}
+        </Col>
+      </Row>
+      
     </div>
   );
 }
